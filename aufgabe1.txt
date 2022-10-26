@@ -1,0 +1,21 @@
+a)  
+Compilerfehler  
+HelloWorld.java:5: error: ';' expected
+        System.out.println("Die Welt ist schön!")
+                                                 ^
+
+b)  
+Compilerfehler  
+ HelloWorld.java:1: error: class HalloWelt is public, should be declared in a file named HalloWelt.java
+public class HalloWelt {
+       ^
+
+c)  
+Laufzeitfehler  
+Fehler: Hauptmethode in Klasse HelloWorld nicht gefunden. Definieren Sie die Hauptmethode als:
+   public static void main(String[] args):
+oder eine JavaFX-Anwendung muss javafx.application.Application erweitern
+
+d)  
+Korrekt
+Die Welt ist schön!
