@@ -5,6 +5,10 @@ Hallo :)
 
 ## How to Git  
 
+TBD
+
+### Authorization to push to repo  
+
 $ git clone https://<tokenhere>@github.com/<user>/<repo>.git  
 
 token = has to be set via Github -> Settings -> Developer Settings -> Tokens  
