@@ -1,11 +1,10 @@
 class Nolindrom {
-  public static void main(String[] args) {
-    // check if Palindrome  
-    long N = 40321;
+
+  //
+  static long reverseInput(long N) {
+
     long R = 0;
     long temp = 0;
-
-
     boolean keepGoing = true;
     while (keepGoing) {
       temp = N % 10;
@@ -19,9 +18,20 @@ class Nolindrom {
       }
     }
 
+    return R;
 
 
+  }
+
+
+  // MAIN
+  public static void main(String[] args) {
+
+    long Input = 123; // TODO get from args
+
+    long R = reverseInput(Input);
     System.out.println(R);
+
 
 
   }
