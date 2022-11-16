@@ -1,6 +1,6 @@
 class Nolindrom {
 
-// Function to return the reverse of an Input
+	// Helper function to return the reverse of an Input
     static long reverseInput(long N) {
 
 		long R = 0;
