@@ -8,41 +8,46 @@ Autoren: ...
 // TODO  
 
 
+
 class Vollmond {
+
+  // function to determine if leap year (taken from lecture notes)
+  public static boolean isLeapYear(int year) {
+    boolean leap;
+    // divisible by 4 but not 100
+    leap = (year % 4 == 0) && (year % 100 != 0);    
+    // or divisible by 400
+    leap = leap || (year % 400 == 0);
+    
+    return leap;
+	}
+
 
 // main - accepting 1 argument -> int n 
   public static void main(String[] args) {
   int N = Integer.parseInt(args[0]);
+  int year = 2022;
 
+  System.out.println(isLeapYear(year));
 
 
 
 // initialise all needed variables in one place to more easily adapt program later
 
-// procedure to determine if leap year (one solution in lecture notes)
 
-// create array with months: Januar, Februar, Maerz, April, Mai, Juni, Juli, August, September, Oktober, November
-// und Dezember
-// and their corresponding lengths in days 
-// (two dimensional array?)
-
-  // dumbass java doesn't allow mixed arrays...
-  // fuck
-
-  // just do two arrays?  
-  // this is some bs
-  String MonthNames [] = {"Januar", "Februar", "Maerz", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"};
-  int MonthDays [] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+// (two dimensional array?) -> not allowed to have mixed type arrays in java, so two arrays it is (or use class)
+  String monthNames [] = {"Januar", "Februar", "Maerz", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"};
+  int monthDays [] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
   boolean leapYear = false;
   if (leapYear) 
-    MonthDays[1] = 29;
+    monthDays[1] = 29;
   else 
-    MonthDays[1] = 28;
+    monthDays[1] = 28;
 
   // check to see if both can be accessed
   int x = 10; // throwaway variable
-  System.out.println("Der " + (x) + ". Monat ist " + MonthNames[x-1] + " und hat " + MonthDays[x-1] + " days.");
+  System.out.println("Der " + (x) + ". Monat ist " + monthNames[x-1] + " und hat " + monthDays[x-1] + " days.");
 
 
 
