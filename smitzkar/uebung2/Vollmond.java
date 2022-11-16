@@ -22,24 +22,27 @@ public class Vollmond {
 	public static void main(String[] args) {
 
 		int N = Integer.parseInt(args[0]);
-		int found = 0;
+
+		// variables to adjust the code (hopefully) without breaking it
+		// IMPORTANT: Careful when messing with monthNames and monthDays as they aren't properly linked (can't have mixed arrays in java or we would have used a 2d array).
 		int moonCycle = 29;
-		int fullMoons;
-		int days = 1; // here?
 		int year = 2022;
-		// Not allowed to have mixed type arrays in java, so name and length of months has to be stored in 2 separate arrays. 
-		// Seems somewhat sketchy, but they stay a constant length, so it should be ok. Added whitespace for legibility. 
 		String monthNames [] = {"Januar", "Februar", "Maerz", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"};
 		int monthDays [] = {     31,       28,        31,      30,      31,    30,     31,     31,       30,          31,        30,         31};
 
+		// counter variables
+		int fullMoons;
+		int days = 1;
+		int found = 0;
+
 		// a bit of trickery to allow putting the year increments at start of while loop for easier readability
-		year--;  
+		year--; // 2021
 
 		// Outer loop, each iteration equals a year
 		while (found < N) {
 
 			// at start of new year, increment variable. More logical to put it at the end, but easier to read this way
-			year++;
+			year++; // 2022
 
 			// call helper function, then adjust length of February stored in array
 			boolean leapYear = isLeapYear(year);
@@ -65,9 +68,6 @@ public class Vollmond {
 					// begin checking for full moons
 					if (days % moonCycle == 1) 
 						fullMoons++;
-
-					// System.out.println(fullMoons);
-					// System.out.println(days);
 				}
 
 				// at the end of each month, check if it had two full moons
@@ -76,26 +76,11 @@ public class Vollmond {
 					System.out.println(year + ", " + monthNames[currentMonth]);
 					found++;
 
-					// because we ONLY want N results and there might be two in a year, end loop early 
-					// (technically unnecessary, but good to have if adjusting program later on)
+					// because we ONLY want exactly N results and there might be two in a year, end loop early 
 					if (found == N)
 						continue;
 				}
 			}
-		
-
 		}
-
-
-		// inner loop
-
-		// for (months in monthsArray) ...
-		//   // reset moon counter  
-		//   moon = 0;
-
-		//   for (int i = 0; i <= currentMonth_length; i++)
-		//     if (days % 29 == 1) moon++
-		//     if (moon == 2) printline (current year, month), found++ 
-
 	}
 }
