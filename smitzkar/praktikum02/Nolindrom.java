@@ -1,6 +1,6 @@
 class Nolindrom {
 
-  //
+  // Function to return the reverse of an Input
   static long reverseInput(long N) {
 
     long R = 0;
@@ -17,22 +17,37 @@ class Nolindrom {
         continue;
       }
     }
-
     return R;
-
-
   }
 
 
-  // MAIN
+// MAIN
   public static void main(String[] args) {
+    long Input = Long.parseLong(args[0]);
 
-    long Input = 123; // TODO get from args
+    // Call function, then print the result for testing purposes
+    long Reverse = reverseInput(Input);
+    System.out.println(Reverse);
 
-    long R = reverseInput(Input);
-    System.out.println(R);
+    // Check if sum == palyndrome  
+    long Summe = Input + Reverse;
+    long SummeR = reverseInput(Summe);
+    if (Summe == SummeR) {
+      System.out.println(Summe + " ist ein Palyndrom!");
+    }
 
 
+
+    // Actual big loop 
+    // go through all numbers from 1 to (including) input
+    for (int i = 1; i <= 300 i++) {
+      
+      // call algo until either palyndrome found or nothing after 100 iterations
+
+      
+      
+
+    }
 
   }
 }
