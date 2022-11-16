@@ -46,10 +46,10 @@ public class Vollmond {
 
 			// call helper function, then adjust length of February stored in array
 			boolean leapYear = isLeapYear(year);
-			if (leapYear) 
-			monthDays[1] = 29;
+			if (leapYear)
+				monthDays[1] = 29;
 			else 
-			monthDays[1] = 28;
+				monthDays[1] = 28;
 
 			
 			// iterate through 12 months of the year
