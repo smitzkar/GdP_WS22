@@ -7,7 +7,7 @@ Autoren: ...
 
 public class Vollmond {
 
-	// function to determine if leap year (taken from lecture notes)
+	// helper function to determine if leap year (taken from lecture notes)
 	public static boolean isLeapYear(int year) {
 		boolean leap;
 		// divisible by 4 but not 100
@@ -31,8 +31,8 @@ public class Vollmond {
 		int monthDays [] = {     31,       28,        31,      30,      31,    30,     31,     31,       30,          31,        30,         31};
 
 		// counter variables
-		int fullMoons;
 		int days = 1;
+		int fullMoons = 0;
 		int found = 0;
 
 		// a bit of trickery to allow putting the year increments at start of while loop for easier readability
@@ -53,16 +53,12 @@ public class Vollmond {
 
 			
 			// iterate through 12 months of the year
-			for (int currentMonth = 0; currentMonth <= (monthDays.length - 1); currentMonth++) {
+			for (int currentMonth = 0; currentMonth < (monthDays.length); currentMonth++) {
 
-				// reset to 0 for new month
-				fullMoons = 0;
-				
-				// System.out.println(monthNames[currentMonth]);
-				// System.out.println(monthDays[currentMonth]);
-				
+				// reset for new month
+				fullMoons = 0;		
 
-				// iterates over days of the current month, also increments global days counter				
+				// iterates over days of the current month, also increments global days counter!				
 				for (int dayOfMonth = 1; dayOfMonth <= monthDays[currentMonth]; dayOfMonth++, days++) {
 
 					// begin checking for full moons
@@ -76,9 +72,9 @@ public class Vollmond {
 					System.out.println(year + ", " + monthNames[currentMonth]);
 					found++;
 
-					// because we ONLY want exactly N results and there might be two in a year, end loop early 
+					// because we only want EXACTLY N results and there might be two in a year, end loop early 
 					if (found == N)
-						continue;
+						break;
 				}
 			}
 		}
