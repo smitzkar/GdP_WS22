@@ -100,6 +100,12 @@ public class Vollmond {
 		or objects or custom data types for this) and a simple statement in our `if (fullMoons == 2)` condition check.
 		*/ 
 
+		// to enable, disable. If false, the return statement ends the program before reaching the analytics 
+		boolean runAnalytics = true;
+		if (!runAnalytics)
+			return;
+
+
 		// using a for-each loop here, just for the sake of trying it. Variation between `print` and `println` for 
 		// proper formatting
 		System.out.println("---ANALYTICS---\nMonths with double full moons:");
