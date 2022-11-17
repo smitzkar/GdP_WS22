@@ -29,7 +29,11 @@ public class Vollmond {
 		int year = 2022;
 		String monthNames [] = {"Januar", "Februar", "Maerz", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"};
 		int monthDays [] = {     31,       28,        31,      30,      31,    30,     31,     31,       30,          31,        30,         31};
-		int monthDistribution [] = {0,0,0,0,0,0,0,0,0,0,0,0}; // optional functionality, should probably have generated this programmatically
+		
+		// for optional functionality at the end. should probably have been generated programmatically
+		int monthDistribution [] = {0,0,0,0,0,0,0,0,0,0,0,0};
+		int yearDistribution [] = {0,0}; 
+		// end of optional
 
 		// counter variables
 		int days = 1;
@@ -72,7 +76,14 @@ public class Vollmond {
 				if (fullMoons == 2) {
 					System.out.println(year + ", " + monthNames[currentMonth]);
 					found++;
-					monthDistribution[currentMonth]++; // optional 
+
+					// optional
+					monthDistribution[currentMonth]++;  
+					if (leapYear)
+						yearDistribution[1]++;
+					else 
+						yearDistribution[0]++;
+					// end of optional
 
 					// because we only want EXACTLY N results and there might be two in a year, end loop early 
 					if (found == N)
@@ -91,12 +102,20 @@ public class Vollmond {
 
 		// using a for-each loop here, just for the sake of trying it. Variation between `print` and `println` for 
 		// proper formatting
+		System.out.println("---ANALYTICS---\nMonths with double full moons:");
 		System.out.print("[");
+		int i = 0;
 		for (int month : monthDistribution) {
-			System.out.print(month + ", ");
+			System.out.print(monthNames[i] + ": " + month + ", "); // formatting isn't quite right, but good enough!
+			i++;
 		}
 		System.out.println("]");
 
+		// also interesting: how does it look for leap vs normal years?
+		// as before, added a small counter to fullMoons check
+		System.out.println("Months with double full moons in:");
+		System.out.println("Regular years: " + yearDistribution[0]);
+		System.out.println("Leap years: " + yearDistribution[1]);
 
 	}
 }
