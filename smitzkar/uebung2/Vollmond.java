@@ -29,6 +29,7 @@ public class Vollmond {
 		int year = 2022;
 		String monthNames [] = {"Januar", "Februar", "Maerz", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"};
 		int monthDays [] = {     31,       28,        31,      30,      31,    30,     31,     31,       30,          31,        30,         31};
+		int monthDistribution [] = {0,0,0,0,0,0,0,0,0,0,0,0}; // optional functionality, should probably have generated this programmatically
 
 		// counter variables
 		int days = 1;
@@ -71,6 +72,7 @@ public class Vollmond {
 				if (fullMoons == 2) {
 					System.out.println(year + ", " + monthNames[currentMonth]);
 					found++;
+					monthDistribution[currentMonth]++; // optional 
 
 					// because we only want EXACTLY N results and there might be two in a year, end loop early 
 					if (found == N)
@@ -78,5 +80,23 @@ public class Vollmond {
 				}
 			}
 		}
+
+		/******************************************************************************
+			Optional FUNctionality
+		******************************************************************************/
+		/* when running the program for high Ns, it would be interesting to see the distribution of double full moons 
+		over the months of the year. To allow for this tracking, we added a third array (should really be using class 
+		or objects or custom data types for this) and a simple statement in our `if (fullMoons == 2)` condition check.
+		*/ 
+
+		// using a for-each loop here, just for the sake of trying it. Variation between `print` and `println` for 
+		// proper formatting
+		System.out.print("[");
+		for (int month : monthDistribution) {
+			System.out.print(month + ", ");
+		}
+		System.out.println("]");
+
+
 	}
 }
