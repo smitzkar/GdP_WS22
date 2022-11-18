@@ -62,7 +62,7 @@ public class Vollmond {
 				monthDays[1] = 28;
 
 			
-			// iterate through 12 months of the year
+			// iterates through 12 months of the year
 			for (int currentMonth = 0; currentMonth < (monthDays.length); currentMonth++) {
 
 				// reset for new month
@@ -71,7 +71,7 @@ public class Vollmond {
 				// iterates over days of the current month, also increments global days counter!				
 				for (int dayOfMonth = 1; dayOfMonth <= monthDays[currentMonth]; dayOfMonth++, days++) {
 
-					// begin checking for full moons
+					// for every day of the month, it checks if it is a full moon
 					if (days % moonCycle == 1) 
 						fullMoons++;
 				}
@@ -90,18 +90,19 @@ public class Vollmond {
 						yearDistribution[0]++;
 					// end of optional
 
-					// because we only want EXACTLY N results and there might be two in a year, end loop early 
+					// because we only want EXACTLY N results, end loop early 
 					if (found == N)
 						break;
 				}
 			}
 		}
 
+
 		/******************************************************************************
 			Optional FUNctionality
 		******************************************************************************/
 		/* when running the program for high Ns, it would be interesting to see the distribution of double full moons 
-		over the months of the year. To allow for this tracking, we added a third array (should really be using class 
+		over the months of the year. To allow for this tracking, we added two more arrays (should really be using class 
 		or objects or custom data types for this) and a simple statement in our `if (fullMoons == 2)` condition check.
 		*/ 
 
@@ -127,6 +128,61 @@ public class Vollmond {
 		System.out.println("Months with double full moons in:");
 		System.out.println("Regular years: " + yearDistribution[0]);
 		System.out.println("Leap years: " + yearDistribution[1]);
+
+		/*		
+		Results for N = 1,000,000
+
+		Months with double full moons:
+			[Januar: 111113, 
+			Februar: 0, 
+			Maerz: 111113, 
+			April: 55554, 
+			Mai: 111110, 
+			Juni: 55558, 
+			Juli: 111111, 
+			August: 111109, 
+			September: 55556, 
+			Oktober: 111112, 
+			November: 55556, 
+			Dezember: 111108]
+		=> remarkably even! 
+
+		Might be interesting to see if there's a pattern. 
+		Just from a quick look, there seems to be some rhyme to it:
+			  1613078, April
+			1613079, Dezember
+			 1613081, August
+			  1613083, Mai
+			1613084, Dezember
+			 1613086, August
+			  1613088, Mai
+			1613089, Dezember
+			 1613091, September
+			  1613093, Mai
+			1613095, Januar
+
+		less obvious, but still noticable here:
+			1612958, Oktober
+			 1612960, Juli
+			  1612962, Maerz
+			1612963, November
+			 1612965, Juli
+			  1612967, April
+			1612968, November
+			 1612970, August
+			  1612972, April
+			1612973, Dezember
+
+		Months with double full moons in:
+			Regular years: 757500
+			Leap years: 242500
+		=> a slight bias for regular years
+			
+		First: 	Januar, 2022
+		Last: 	Juni, 	1613130
+		=> It took 1,611,108 years to reach 1,000,000 hits
+
+		*/
 
 	}
 }
