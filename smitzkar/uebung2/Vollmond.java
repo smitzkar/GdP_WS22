@@ -7,14 +7,19 @@ Autoren: ...
 
 public class Vollmond {
 
-	// helper function to determine if leap year (taken from lecture notes)
+	// helper function to determine if leap year
 	public static boolean isLeapYear(int year) {
-		boolean leap;
-		// divisible by 4 but not 100
-		leap = (year % 4 == 0) && (year % 100 != 0);    
-		// or divisible by 400
-		leap = leap || (year % 400 == 0);	
-		return leap;
+		boolean leapYear;
+		if (year % 4 != 0)
+			leapYear = false;
+		else if (year % 100 != 0)
+			leapYear = true;
+		else if (year % 400 != 0)
+			leapYear = false;
+		else 
+			leapYear = true;
+		
+		return leapYear;
 	}
 
 
