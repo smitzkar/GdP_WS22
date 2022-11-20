@@ -107,7 +107,7 @@ public class VollmondX {
 		*/ 
 
 		// to enable, disable. If false, the return statement ends the program before reaching the analytics 
-		boolean runAnalytics = true;
+		boolean runAnalytics = false;
 		if (!runAnalytics)
 			return;
 
