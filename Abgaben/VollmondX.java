@@ -1,7 +1,7 @@
 /* 
 GdP - Uebungsblatt 2 - Aufgabe 1
 Gruppe AG059
-Autoren: ...
+Autoren: Liv-Grete Harder, Jedrzej Stanislaw Slowinski, Karl Erik Schmitz
 */ 
 
 
