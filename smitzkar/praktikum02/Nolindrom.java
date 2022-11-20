@@ -40,7 +40,7 @@ class Nolindrom {
 
 		// Actual big loop 
 		// go through all numbers from 1 to (including) input
-		for (int i = 1; i <= 300 i++) {
+		for (int i = 1; i <= 300; i++) {
 		
 		// call algo until either palyndrome found or nothing after 100 iterations
 
