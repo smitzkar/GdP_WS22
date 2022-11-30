@@ -3,22 +3,27 @@ public class Sieb {
 
         int N = Integer.parseInt(args[0]);
         boolean[] p = new boolean[N];
-        
-        for (int i= 2; i<N; i++)
-            p[i]= true; // initialization: no factors found yet
 
+        // Problem: how to figure out how big of an array is required?  
+        // Idea: run the loop in "chunks" of numbers until enough primes found  
+        // Possile complications: can java arrays be appended after init? -> nope
+        // Solution: create new arrays? Seems wasteful
+        
+        // Initialise array with all values true
+        for (int i= 2; i<N; i++)
+            p[i]= true;
+
+        // Go through array and switch to false if not a prime
         for (int i= 2; i*i < N; i++) {
             if (p[i]) {
-            // i is prime number -> leave p[i] == true
-            // mark multiples of i as nonprime
                 for (int n = 2; n*i<N; n++)
-                p[n*i]= false;
+                    p[n*i]= false;
             }
         }
 
         for (int i=2; i<N; i++)
             if (p[i])
-                System.out.println(i+ " is prime");
+                System.out.println(i);
     }
 
 }
