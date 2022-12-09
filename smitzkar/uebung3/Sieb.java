@@ -7,7 +7,7 @@ public class Sieb {
         // Problem: how to figure out how big of an array is required?  
         // Idea: run the loop in "chunks" of numbers until enough primes found  
         // Possile complications: can java arrays be appended after init? -> nope
-        // Solution: create new arrays? Seems wasteful
+        // Solution: create new arrays? Seems wasteful -> that's apparently the solution
         
         // Initialise array with all values true
         for (int i= 2; i<N; i++)

@@ -1,0 +1,3 @@
+[submodule "GdP"]
+	path = GdP
+	url = https://github.com/Liv-Grete/GdP.git
