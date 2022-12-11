@@ -57,8 +57,9 @@ public class Bigs {
 			}
 		}
 
-		// before returning, remove leading Zeroes 
-		return removeLeadingZeroes(c);
+		// before returning, remove potential leading Zeroes 
+		// return removeLeadingZeroes(c);
+		return c;
 	}
 
 	// gibt das Ziffernfeld n in lesbarer dezimaler Form aus
@@ -130,8 +131,26 @@ public class Bigs {
 		return copy;
 	}
 
-	//	// multipliziert das Ziffernfeld a mit einer int-Zahl
-	//	static int[ ] times(int[ ] n, int d)     { /* TODO */ }
+	// multipliziert das Ziffernfeld a mit einer int-Zahl
+	static int[ ] times(int[ ] n, int d){
+		int[] longOutput = new int[n.length+1];
+		int[] output = new int[longOutput.length];
+
+		for(int i = 0; i < n.length; i++){
+			longOutput[i] = n[i]*d;
+		}
+		for(int i = 0; i < longOutput.length; i++){
+			if(longOutput[i] >= 10){
+				longOutput[i+1] = longOutput[i+1] + longOutput[i]/10;
+				longOutput[i] = longOutput[i] % 10;
+			}
+		}
+
+		print(output);
+		return removeLeadingZeroes(output);
+	}
+
+
 	//
 	//	// multipliziert das Ziffernfeld n mit 10
 	//	static int[ ] times10(int[ ] n)          { /* TODO */ }
@@ -193,7 +212,9 @@ public class Bigs {
 	//	// Test auf Korrektheit eines Ziffernfeldes: Feld existiert und enthaelt
 	//	// mindenstens eine Ziffer, alle Positionen liegen zwischen 0 und 9
 	//	// keine fuehrenden Nullen (ausser bei Null selbst) 
-	//	static boolean ok (int[ ] n)             { /* TODO */ }
+	// static boolean ok (int[ ] n) {
+		
+	// }
 	//
 	//	// gibt die (kleinste) Ziffer mit der groessten Haeufigkeit in n aus	
 	//	static void maxDigit(int[] n)            { /* TODO */ }
@@ -202,16 +223,18 @@ public class Bigs {
 
 
 		// tests
-		print(One());
-		print(digit(2));
-		print(Null());
 		int [] test1 = {1,2,3};
 		int [] test2 = {9,9};
 		print(add(test1, test2));
+
 		print(div10(test1));
 
 		int [] test3 = {1,2,3,4,0,0};
 		print(add(test3, test1));
+
+		print(test3);
+		print(removeLeadingZeroes(test3));
+		print(times(test2, 6));
 
 		System.out.println(equal(test2, test2));
 
