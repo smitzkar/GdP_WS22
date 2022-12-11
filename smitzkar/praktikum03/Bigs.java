@@ -2,6 +2,9 @@ public class Bigs {
 
 	public static int[] removeLeadingZeroes(int [] input){
 
+		// for optimisation, check if this is even necessary
+		if (input[input.length - 1] != 0) return input;
+
 		// checks how many leading Zeroes there are
 		int leadingZeroes = 0;
 		for (int i = input.length - 1; i >= 0; i--){
@@ -146,9 +149,29 @@ public class Bigs {
 	//
 
 	//	// Test auf kleiner-Relation zweier Ziffernfelder: a < b ?
-	//	static boolean less (int[ ] a, int[ ] b) { /* TODO */ }
+	static boolean less (int[ ] a, int[ ] b) {
 
-		// Idea: for optimisation, compare length first -> only do the actual comparison if inconclusive
+		// first check if one is bigger than the other (after removing potential leading zeroes)
+		if (removeLeadingZeroes(a).length < removeLeadingZeroes(b).length) return true;
+
+		// make sure they're not equal
+		if (equal(a, b)) return false;
+
+
+		// only if the easy checks above don't return a result, go through each value/position
+		// start at the end as that's the highest decimal place
+		for (int i = a.length - 1; i >= 0; i--) {
+			if (a[i] == b[i]) continue;
+			if (a[i] < b[i]) return true;
+			if (a[i] > b[i]) return false;
+		}
+
+		// IDE complains that it needs to return something. It should never get here, but if it does...
+		return false;
+
+	}
+
+		
 
 	//
 
@@ -189,6 +212,8 @@ public class Bigs {
 
 		int [] test3 = {1,2,3,4,0,0};
 		print(add(test3, test1));
+
+		System.out.println(equal(test2, test2));
 
 		//		int[] a = One();
 
