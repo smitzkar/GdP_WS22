@@ -58,6 +58,8 @@ public class Bigs {
 			}
 		}
 
+
+
 		// before returning, remove potential leading Zeroes 
 		return removeLeadingZeroes(c);
 	}
@@ -212,9 +214,19 @@ public class Bigs {
 	//	// Test auf Korrektheit eines Ziffernfeldes: Feld existiert und enthaelt
 	//	// mindenstens eine Ziffer, alle Positionen liegen zwischen 0 und 9
 	//	// keine fuehrenden Nullen (ausser bei Null selbst) 
-	// static boolean ok (int[ ] n) {
+	static boolean ok (int[ ] n) {
 		
-	// }
+		if (n.length == 0) return false;
+
+		if (n[n.length - 1] == 0 && n.length != 1) return false;
+
+		for (int i = 0; i < n.length; i++) {
+			if (n[i] > 9 || n[i] < 0) return false;
+		}
+
+		return true;
+
+	}
 	//
 	//	// gibt die (kleinste) Ziffer mit der groessten Haeufigkeit in n aus	
 	//	static void maxDigit(int[] n)            { /* TODO */ }
@@ -223,24 +235,26 @@ public class Bigs {
 
 
 		// tests
-		int [] test1 = {1,2,3};
+		int [] test1 = {0};
 		int [] test2 = {9,9};
-		print(add(test1, test2));
+		// print(add(test1, test2));
 
-		print(div10(test1));
+		// print(div10(test1));
 
-		int [] test3 = {1,2,3,4,0,0};
-		print(add(test3, test1));
+		// int [] test3 = {1,2,3,4,0,0};
+		// print(add(test3, test1));
 
-		int [] test4 = {0,2,1,0,0,0};
-		print(test4);
-		print(removeLeadingZeroes(test4));
+		// int [] test4 = {0,2,1,0,0,0};
+		// print(test4);
+		// print(removeLeadingZeroes(test4));
 
-		print(test3);
-		print(removeLeadingZeroes(test3));
-		print(times(test2, 6));
+		// print(test3);
+		// print(removeLeadingZeroes(test3));
+		// print(times(test2, 6));
 
-		System.out.println(equal(test2, test2));
+		// System.out.println(equal(test2, test2));
+
+		System.out.println(ok(test1));
 
 		//		int[] a = One();
 
