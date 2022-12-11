@@ -9,6 +9,7 @@ public class Bigs {
 		int leadingZeroes = 0;
 		for (int i = input.length - 1; i >= 0; i--){
 			if (input[i] == 0) leadingZeroes++;
+			else break;
 		}
 
 		// initiate new output array of proper size and copy everything up to (excluding) the leading Zeroes
@@ -58,8 +59,7 @@ public class Bigs {
 		}
 
 		// before returning, remove potential leading Zeroes 
-		// return removeLeadingZeroes(c);
-		return c;
+		return removeLeadingZeroes(c);
 	}
 
 	// gibt das Ziffernfeld n in lesbarer dezimaler Form aus
@@ -231,6 +231,10 @@ public class Bigs {
 
 		int [] test3 = {1,2,3,4,0,0};
 		print(add(test3, test1));
+
+		int [] test4 = {0,2,1,0,0,0};
+		print(test4);
+		print(removeLeadingZeroes(test4));
 
 		print(test3);
 		print(removeLeadingZeroes(test3));
