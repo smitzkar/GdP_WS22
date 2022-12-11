@@ -2,14 +2,14 @@ public class Bigs {
 
 	public static int[] removeLeadingZeroes(int [] input){
 
-		int leadingZeroes = 0;
-
 		// checks how many leading Zeroes there are
+		int leadingZeroes = 0;
 		for (int i = input.length - 1; i >= 0; i--){
 			if (input[i] == 0) leadingZeroes++;
 		}
 
-		// initiate new output array of proper size and only copy everything up to (excluding) the leading Zeroes
+		// initiate new output array of proper size and copy everything up to (excluding) the leading Zeroes
+		// should probably just call our copy method below? Would require some changes, though. Not worth it
 		int [] output = new int [input.length - leadingZeroes];
 		for (int i = 0; i < output.length; i++) {
 			output[i] = input[i];
@@ -24,22 +24,14 @@ public class Bigs {
 	// addiert die Ziffernfelder a und b
 	public static int[ ] add (int[ ] a, int[ ] b){
 
-		// Idea: add index by index. remember 1 for next, if > 9
-		// how to test beforehand if we need a bigger array? 
-		// might be helpful to compare the two (using less()?) 
-		// this one is a bit tricky 
-
 		// test which array is larger  
 		int max = a.length; 
 		if (max < b.length) max = b.length; 
 
-		// not quite perfect way to ensure that target array is big enough. Fails for 1 + 99. 
-		// alternatively, always assume that it's gonna need a bigger one, then remove the leading 0 if necessary?
+		// instead of testing for various cases (a bit more difficult than expected), we just assume the worst case of needing a bigger array
+		int [] c = new int [max+1]; 	
 
-		if (a.length == b.length && a[a.length - 1] + b[b.length - 1] > 9) max++;
-
-		int remember = 0;	// variable to remember if we got over 10
-		int [] c = new int [max];
+		int carry = 0;
 
 		for (int i = 0; i < max; i++){
 
@@ -50,18 +42,20 @@ public class Bigs {
 			if (i >= b.length) temp2 = 0;
 			else temp2 = b[i];
 
-			int tempSum = temp1 + temp2 + remember;
+			// add the numbers plus possible carry-over. if it's higher than 9, carry the 1
+			int tempSum = temp1 + temp2 + carry;
 			if (tempSum > 9){
 				c[i] = tempSum % 10;
-				remember = 1;
+				carry = 1;
 			} 
 			else {
 				c[i] = tempSum;
-				remember = 0;
+				carry = 0;
 			}
 		}
 
-		return c;
+		// before returning, remove leading Zeroes 
+		return removeLeadingZeroes(c);
 	}
 
 	// gibt das Ziffernfeld n in lesbarer dezimaler Form aus
@@ -194,7 +188,7 @@ public class Bigs {
 		print(div10(test1));
 
 		int [] test3 = {1,2,3,4,0,0};
-		print(removeLeadingZeroes(test3));
+		print(add(test3, test1));
 
 		//		int[] a = One();
 
