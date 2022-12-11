@@ -1,8 +1,23 @@
-/**
- * 
- *
- */
 public class Bigs {
+
+	public static int[] removeLeadingZeroes(int [] input){
+
+		int leadingZeroes = 0;
+
+		// checks how many leading Zeroes there are
+		for (int i = input.length - 1; i >= 0; i--){
+			if (input[i] == 0) leadingZeroes++;
+		}
+
+		// initiate new output array of proper size and only copy everything up to (excluding) the leading Zeroes
+		int [] output = new int [input.length - leadingZeroes];
+		for (int i = 0; i < output.length; i++) {
+			output[i] = input[i];
+		}
+
+		return output;
+
+	}
 
 	//implement following methods 
 
@@ -178,6 +193,8 @@ public class Bigs {
 		print(add(test1, test2));
 		print(div10(test1));
 
+		int [] test3 = {1,2,3,4,0,0};
+		print(removeLeadingZeroes(test3));
 
 		//		int[] a = One();
 
