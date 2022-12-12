@@ -346,8 +346,6 @@ public class Bigs {
 	public static void main (String[ ] s){
         int[] a = One();
 
-		int [] test1 = {0,0};
-		print(removeLeadingZeroes(test1));
 		
 		for (int i=0; i<33222; ++i) {
 			a = times(a, 2);
