@@ -7,8 +7,8 @@ public class Bigs {
 
 		// checks how many leading Zeroes there are
 		int leadingZeroes = 0;
-		for (int i = 0; i < input.length; i++){
-			if (input[input.length-1-i] == 0){
+		for (int i = 1; i < input.length; i++){
+			if (input[input.length-i] == 0){
 				leadingZeroes++;
 			} else {
 				break;
@@ -346,6 +346,8 @@ public class Bigs {
 	public static void main (String[ ] s){
         int[] a = One();
 
+		int [] test1 = {0,0};
+		print(removeLeadingZeroes(test1));
 		
 		for (int i=0; i<33222; ++i) {
 			a = times(a, 2);
