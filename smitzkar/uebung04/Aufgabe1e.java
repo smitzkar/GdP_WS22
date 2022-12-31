@@ -1,8 +1,9 @@
 public class Aufgabe1e {
 
 	public static void main(String[] args) {
-		int a = 123;
+		int a = 1200002;
 		System.out.println(magic2(magic1(magic2(magic1(a)))));
+		System.out.println(magic2(magic1(a)));
 	}
 
 	public static int[] magic1(int a) {
