@@ -14,7 +14,7 @@ public class ArmstrongNumbers {
 		int numberCopy = number;		// Working copy
 		int currentDigit;			// Not necessary, but improves readability
 
-		// Iterates through all digits of the number, adding their value raised to power of digits.
+		// Iterate through all digits of the number, adding their value raised to power of digits.
 		// Use a do-while loop to most comfortably include 0.
 		do {
 			currentDigit = numberCopy % 10; 			
@@ -55,7 +55,7 @@ public class ArmstrongNumbers {
 		int digits = 0;
 
 		// Interger-divide input number by 10, count iterations until 0. 
-		// do-while to include single digit numbers.
+		// Use do-while to include single digit numbers.
 		do {
 			number = number / 10;
 			digits++;
