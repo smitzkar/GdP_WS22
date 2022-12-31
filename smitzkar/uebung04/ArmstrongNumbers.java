@@ -5,19 +5,16 @@ public class ArmstrongNumbers {
 		// 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 153, 370, 371, 407, 1634
 		printArray(test);
 
-		System.out.println(isArmstrongNumber(231));
 	}
 
 
-
-	// TODO
 	public static boolean isArmstrongNumber(int number) {
 
-		// Deal with special case
+		// Deal with special case. Could rewrite loop to do-while, but we might as well skip it.
 		if (number == 0) return true;
 
 
-		int digits = digits(number);	// Calls function to determine number of digits
+		int digits = numberOfDigits(number);	// Calls function to determine number of digits
 		int sum = 0;					
 		int numberCopy = number;		// Working copy
 		int currentDigit;				// Not necessary, but improves readability
@@ -33,9 +30,20 @@ public class ArmstrongNumbers {
 		return (number == sum);
 	}
 
-	// TODO
 	public static int[] giveArmstrongNumbers(int n) {
-		return new int[n];
+
+		// Generate empty array to be filled with found Armstrong numbersS
+		int [] ArmstrongNumbers = new int [n];
+
+		// Iterate through natural numbers until array is filled
+		for (int i = 0, found = 0; found < n; i++){
+			if (isArmstrongNumber(i)){
+				ArmstrongNumbers[found] = i;
+				found++;
+			}
+		}
+
+		return ArmstrongNumbers;
 	}
 
 	private static void printArray(int[] a) {
@@ -45,7 +53,7 @@ public class ArmstrongNumbers {
 		}
 	}
 
-	public static int digits(int number){
+	public static int numberOfDigits(int number){
 		// Determine number of digits for input number
 
 		// Catch special case.
@@ -58,6 +66,7 @@ public class ArmstrongNumbers {
 			number = number / 10;
 			digits++;
 		}
+		
 		return digits;
 	}
 }
