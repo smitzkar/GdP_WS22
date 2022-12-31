@@ -16,8 +16,8 @@ public class ArmstrongNumbers {
 
 		int digits = numberOfDigits(number);	// Calls function to determine number of digits
 		int sum = 0;					
-		int numberCopy = number;				// Working copy
-		int currentDigit;						// Not necessary, but improves readability
+		int numberCopy = number;		// Working copy
+		int currentDigit;			// Not necessary, but improves readability
 
 		// Iterates through all digits of the number, adding their value raised to power of digits.
 		while (numberCopy != 0){
