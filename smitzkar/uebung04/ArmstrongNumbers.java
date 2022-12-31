@@ -1,18 +1,13 @@
 public class ArmstrongNumbers {
 	public static void main(String[] args) {
 
-		int[] test = giveArmstrongNumbers(15);
-		// 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 153, 370, 371, 407, 1634
-		printArray(test);
+		int n = Integer.parseInt(args[0]);
+		printArray(giveArmstrongNumbers(n));
 
 	}
 
 
 	public static boolean isArmstrongNumber(int number) {
-
-		// Deal with special case. Could rewrite loop to do-while, but we might as well skip it.
-		if (number == 0) return true;
-
 
 		int digits = numberOfDigits(number);	// Calls function to determine number of digits
 		int sum = 0;					
@@ -20,11 +15,13 @@ public class ArmstrongNumbers {
 		int currentDigit;			// Not necessary, but improves readability
 
 		// Iterates through all digits of the number, adding their value raised to power of digits.
-		while (numberCopy != 0){
+		// Use a do-while loop to most comfortably include 0.
+		do {
 			currentDigit = numberCopy % 10; 			
 			sum += Math.pow(currentDigit, digits); 
 			numberCopy /= 10;
 		}
+		while (numberCopy != 0);
 
 		// Compares input number and calculated sum.
 		return (number == sum);
@@ -54,18 +51,16 @@ public class ArmstrongNumbers {
 	}
 
 	public static int numberOfDigits(int number){
-		// Determine number of digits for input number
-
-		// Catch special case.
-		if (number == 0) return 1;
 
 		int digits = 0;
 
-		// Interger divide input number by 10, count iterations until 0. 
-		while (number != 0){
+		// Interger-divide input number by 10, count iterations until 0. 
+		// do-while to include single digit numbers.
+		do {
 			number = number / 10;
 			digits++;
 		}
+		while (number != 0);
 
 		return digits;
 	}
