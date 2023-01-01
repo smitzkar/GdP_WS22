@@ -29,7 +29,7 @@ public class ArmstrongNumbers {
 
 	public static int[] giveArmstrongNumbers(int n) {
 
-		// Generate empty array to be filled with found Armstrong numbersS
+		// Generate empty array to be filled with found Armstrong numbers
 		int [] ArmstrongNumbers = new int [n];
 
 		// Iterate through natural numbers until array is filled
@@ -54,7 +54,7 @@ public class ArmstrongNumbers {
 
 		int digits = 0;
 
-		// Interger-divide input number by 10, count iterations until 0. 
+		// Interger-divide input number by 10 to remove last digit until none left. Count iterations.
 		// Use do-while to include single digit numbers.
 		do {
 			number = number / 10;
@@ -65,3 +65,4 @@ public class ArmstrongNumbers {
 		return digits;
 	}
 }
+
