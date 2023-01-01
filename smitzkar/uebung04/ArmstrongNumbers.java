@@ -9,7 +9,7 @@ public class ArmstrongNumbers {
 
 	public static boolean isArmstrongNumber(int number) {
 
-		int digits = numberOfDigits(number);	// Calls function to determine number of digits
+		int digits = numberOfDigits(number);	// Call function to determine number of digits
 		int sum = 0;					
 		int numberCopy = number;		// Working copy
 		int currentDigit;			// Not necessary, but improves readability
@@ -23,7 +23,7 @@ public class ArmstrongNumbers {
 		}
 		while (numberCopy != 0);
 
-		// Compares input number and calculated sum.
+		// Compare input number and calculated sum.
 		return (number == sum);
 	}
 
