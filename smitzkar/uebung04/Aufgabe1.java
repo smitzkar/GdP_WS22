@@ -2,17 +2,17 @@ public class Aufgabe1 {
 
 	// Teilaufgabe a)
 	public static boolean[] aufgabe_a(boolean ergebnisseAusgeben) {
-		// Geben Sie hier bitte für jede Aussage an,
+		// Geben Sie hier bitte fï¿½r jede Aussage an,
 		// ob die Aussage richtig (true)
 		// oder falsch (false) ist.
-		boolean a = true; // Aussage A
+		boolean a = false; // Aussage A
 		boolean b = true; // Aussage B
-		boolean c = true; // Aussage C
-		boolean d = true; // Aussage D
-		boolean e = true; // Aussage E
+		boolean c = false; // Aussage C
+		boolean d = false; // Aussage D
+		boolean e = false; // Aussage E
 		boolean f = true; // Aussage F
 
-		// ab hier bitte nichts mehr ändern
+		// ab hier bitte nichts mehr ï¿½ndern
 		boolean[] antworten = { a, b, c, d, e, f };
 		if (ergebnisseAusgeben)
 			print('a', antworten);
@@ -21,17 +21,17 @@ public class Aufgabe1 {
 
 	// Teilaufgabe b)
 	public static boolean[] aufgabe_b(boolean ergebnisseAusgeben) {
-		// Geben Sie hier bitte für jede Aussage an,
+		// Geben Sie hier bitte fï¿½r jede Aussage an,
 		// ob die Aussage richtig (true)
 		// oder falsch (false) ist.
-		boolean a = true; // Aussage A
-		boolean b = true; // Aussage B
+		boolean a = false; // Aussage A
+		boolean b = false; // Aussage B
 		boolean c = true; // Aussage C
-		boolean d = true; // Aussage D
+		boolean d = false; // Aussage D
 		boolean e = true; // Aussage E
-		boolean f = true; // Aussage F
+		boolean f = false; // Aussage F
 
-		// ab hier bitte nichts mehr ändern
+		// ab hier bitte nichts mehr ï¿½ndern
 		boolean[] antworten = { a, b, c, d, e, f };
 		if (ergebnisseAusgeben)
 			print('b', antworten);
@@ -40,17 +40,17 @@ public class Aufgabe1 {
 
 	// Teilaufgabe c)
 	public static boolean[] aufgabe_c(boolean ergebnisseAusgeben) {
-		// Geben Sie hier bitte für jede Aussage an,
+		// Geben Sie hier bitte fï¿½r jede Aussage an,
 		// ob die Aussage richtig (true)
 		// oder falsch (false) ist.
-		boolean a = true; // Aussage A
+		boolean a = false; // Aussage A
 		boolean b = true; // Aussage B
-		boolean c = true; // Aussage C
+		boolean c = false; // Aussage C
 		boolean d = true; // Aussage D
 		boolean e = true; // Aussage E
-		boolean f = true; // Aussage F
+		boolean f = false; // Aussage F
 
-		// ab hier bitte nichts mehr ändern
+		// ab hier bitte nichts mehr ï¿½ndern
 		boolean[] antworten = { a, b, c, d, e, f };
 		if (ergebnisseAusgeben)
 			print('c', antworten);
@@ -59,17 +59,17 @@ public class Aufgabe1 {
 
 	// Teilaufgabe a)
 	public static boolean[] aufgabe_d(boolean ergebnisseAusgeben) {
-		// Geben Sie hier bitte für jede Aussage an,
+		// Geben Sie hier bitte fï¿½r jede Aussage an,
 		// ob die Aussage richtig (true)
 		// oder falsch (false) ist.
-		boolean a = true; // Aussage A
-		boolean b = true; // Aussage B
+		boolean a = false; // Aussage A
+		boolean b = false; // Aussage B
 		boolean c = true; // Aussage C
 		boolean d = true; // Aussage D
-		boolean e = true; // Aussage E
+		boolean e = false; // Aussage E
 		boolean f = true; // Aussage F
 
-		// ab hier bitte nichts mehr ändern
+		// ab hier bitte nichts mehr ï¿½ndern
 		boolean[] antworten = { a, b, c, d, e, f };
 		if (ergebnisseAusgeben)
 			print('d', antworten);
@@ -78,24 +78,24 @@ public class Aufgabe1 {
 
 	// Teilaufgabe a)
 	public static boolean[] aufgabe_e(boolean ergebnisseAusgeben) {
-		// Geben Sie hier bitte für jede Aussage an,
+		// Geben Sie hier bitte fï¿½r jede Aussage an,
 		// ob die Aussage richtig (true)
 		// oder falsch (false) ist.
-		boolean a = true; // Aussage A
+		boolean a = false; // Aussage A
 		boolean b = true; // Aussage B
 		boolean c = true; // Aussage C
-		boolean d = true; // Aussage D
-		boolean e = true; // Aussage E
+		boolean d = false; // Aussage D
+		boolean e = false; // Aussage E
 		boolean f = true; // Aussage F
 
-		// ab hier bitte nichts mehr ändern
+		// ab hier bitte nichts mehr ï¿½ndern
 		boolean[] antworten = { a, b, c, d, e, f };
 		if (ergebnisseAusgeben)
 			print('e', antworten);
 		return antworten;
 	}
 
-	// Ausgabe der gewählten Antworten
+	// Ausgabe der gewï¿½hlten Antworten
 	private static void print(char c, boolean[] b) {
 		System.out.println("Teilaufgabe " + c + ")");
 		for (int i = 0; i < b.length; i++) {
@@ -106,7 +106,7 @@ public class Aufgabe1 {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Unsere Antwortmöglichkeiten für Aufgabe 1\n");
+		System.out.println("Unsere Antwortmï¿½glichkeiten fï¿½r Aufgabe 1\n");
 		aufgabe_a(true);
 		aufgabe_b(true);
 		aufgabe_c(true);
